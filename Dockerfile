@@ -31,4 +31,3 @@ EXPOSE 8080
 
 # Ejecuta el binario
 CMD ["./support-service"]
-]
