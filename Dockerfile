@@ -9,7 +9,10 @@ WORKDIR /app
 # Copia el proyecto
 COPY . .
 
-# Usa el wrapper de Maven para compilar en modo nativo
+# Da permisos de ejecución al wrapper de Maven
+RUN chmod +x ./mvnw
+
+# Compila en modo nativo
 RUN ./mvnw -Pnative -DskipTests clean package
 
 # Etapa 2: Imagen final minimalista
