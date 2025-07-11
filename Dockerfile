@@ -13,7 +13,7 @@ COPY . .
 RUN chmod +x ./mvnw
 
 # Compila en modo nativo
-RUN ./mvnw -Pnative -DskipTests clean package
+RUN chmod +x ./mvnw && ./mvnw -Pnative -DskipTests clean package -X
 
 # Etapa 2: Imagen final minimalista
 FROM alpine:3.18
